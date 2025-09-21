@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOSSEE Workshop Booking - Enhanced</title>
+    <link rel="stylesheet" href="enhanced_styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-graduation-cap"></i>
+                <span>FOSSEE</span>
+            </div>
+            
+            
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#workshops" class="nav-link">Workshops</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#login" class="nav-link login-btn">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Master New Skills with
+                    <span class="highlight">Expert-Led Workshops</span>
+                </h1>
+                <p class="hero-description">
+                    Join our comprehensive workshops designed to enhance your technical skills. 
+                    Learn from industry experts and connect with like-minded professionals.
+                </p>
+                
+                
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="scrollToWorkshops()">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Browse Workshops</span>
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollToAbout()">
+                        <i class="fas fa-play-circle"></i>
+                        <span>Watch Demo</span>
+                    </button>
+                </div>
+                
+                
+                <div class="trust-indicators">
+                    <div class="trust-item">
+                        <i class="fas fa-users"></i>
+                        <span>10,000+ Students</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-star"></i>
+                        <span>4.9/5 Rating</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-certificate"></i>
+                        <span>Certified Courses</span>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="hero-visual">
+                <div class="workshop-preview-card">
+                    <div class="card-header">
+                        <div class="category-badge">Programming</div>
+                        <div class="duration">2 Days</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Python Fundamentals</h3>
+                        <p>Learn Python from scratch with hands-on projects</p>
+                        <div class="card-meta">
+                            <span><i class="fas fa-calendar"></i> Feb 15-16</span>
+                            <span><i class="fas fa-users"></i> 25 seats</span>
+                        </div>
+                        <div class="price">₹2,500</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Workshops</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10K+</div>
+                    <div class="stat-label">Students</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Instructors</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Success Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="workshops" class="workshops">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Upcoming Workshops</h2>
+                <p class="section-subtitle">Choose from our carefully curated selection of technical workshops</p>
+            </div>
+            
+            
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="all">All</button>
+                <button class="filter-tab" data-filter="programming">Programming</button>
+                <button class="filter-tab" data-filter="data-science">Data Science</button>
+                <button class="filter-tab" data-filter="web-dev">Web Dev</button>
+                <button class="filter-tab" data-filter="ai-ml">AI/ML</button>
+            </div>
+            
+            
+            <div class="workshops-grid" id="workshopsGrid">
+                <!-- Workshop cards will be dynamically generated -->
+            </div>
+            
+            
+            <div class="load-more-container">
+                <button class="btn btn-outline load-more-btn" id="loadMoreBtn">
+                    <i class="fas fa-plus"></i>
+                    Load More Workshops
+                </button>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About FOSSEE</h2>
+                    <p class="about-description">
+                        FOSSEE (Free and Open Source Software for Education) is an initiative that promotes 
+                        the use of free and open source software in educational institutions. Our workshops 
+                        bridge the gap between academic learning and industry requirements.
+                    </p>
+                    
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Industry-relevant curriculum</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Hands-on practical sessions</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Expert instructors</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Certificate of completion</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-visual">
+                    <div class="image-container">
+                        <div class="floating-card card-1">
+                            <i class="fas fa-code"></i>
+                            <span>Code</span>
+                        </div>
+                        <div class="floating-card card-2">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Data</span>
+                        </div>
+                        <div class="floating-card card-3">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Mobile</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get in Touch</h2>
+                <p class="section-subtitle">Have questions? We'd love to hear from you.</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email Us</h4>
+                            <p>workshops@fossee.in</p>
+                            <span>We'll respond within 24 hours</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Call Us</h4>
+                            <p>+91 22 2576 4989</p>
+                            <span>Mon-Fri, 9AM-6PM</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Visit Us</h4>
+                            <p>IIT Bombay, Powai</p>
+                            <span>Mumbai, Maharashtra</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="workshop">Workshop Information</option>
+                            <option value="booking">Booking Support</option>
+                            <option value="technical">Technical Support</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Tell us how we can help you..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>FOSSEE</span>
+                    </div>
+                    <p>Empowering education through free and open source software.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#workshops">Workshops</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Workshop Categories</h4>
+                    <ul>
+                        <li><a href="#">Programming</a></li>
+                        <li><a href="#">Data Science</a></li>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Machine Learning</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to get updates about new workshops.</p>
+                    <form class="newsletter-form">
+                        <div class="newsletter-input">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 FOSSEE. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    <div id="bookingModal" class="modal">
+        <div class="modal-overlay" onclick="closeModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Book Workshop</h2>
+                <button class="modal-close" onclick="closeModal()" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <form id="bookingForm">
+                    <div class="workshop-info">
+                        <h3 id="modalWorkshopTitle">Workshop Title</h3>
+                        <div class="workshop-details">
+                            <span id="modalWorkshopDate">Date</span>
+                            <span id="modalWorkshopDuration">Duration</span>
+                            <span id="modalWorkshopPrice">Price</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="bookingFirstName">First Name *</label>
+                            <input type="text" id="bookingFirstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingLastName">Last Name *</label>
+                            <input type="text" id="bookingLastName" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="bookingEmail">Email Address *</label>
+                        <input type="email" id="bookingEmail" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="bookingPhone">Phone Number *</label>
+                        <input type="tel" id="bookingPhone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="bookingOrganization">Organization/Institution *</label>
+                        <input type="text" id="bookingOrganization" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="bookingExperience">Experience Level *</label>
+                        <select id="bookingExperience" required>
+                            <option value="">Select your level</option>
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="bookingMotivation">Why do you want to attend this workshop? *</label>
+                        <textarea id="bookingMotivation" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-calendar-plus"></i>
+                            Book Workshop
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Processing...</p>
+        </div>
+    </div>
+
+    
+    <div id="messageContainer" class="message-container"></div>
+
+    <script src="enhanced_script.js"></script>
+</body>
+</html>
